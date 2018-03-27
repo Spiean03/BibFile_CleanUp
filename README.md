@@ -4,7 +4,7 @@ Removes unwanted entries from your .bib file
 Bibtex files are ridiculously messy, and especially if you use self-generating bibfile software like Mendeley, you end up with a lot of entries that you don't want.
 I'm using Latex to generate my articles/papers/documents and my knowledge in Latex is too limited to figure out how I properly adjust my bibliographystyle so that unwanted sections are not shown.
 Yes, I know, there are the 
-```python
+```
 \AtEveryBibitem{\clearfield{xxx}} 
 \AtEveryCitekey{\clearfield{yyy}}
 ```
