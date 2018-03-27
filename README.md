@@ -7,17 +7,24 @@ Yes, I know, there are the "\AtEveryBibitem{\clearfield{xxx}}" and "\AtEveryCite
 
 Here is a script that removes unwanted entries from your .bib file. No worries, a new file is created and the old one will still exist.
 
+## Requires:
 First, this code runs on Python 2.7, so make sure you have it.
 Second, install the bibtexparser package, you can just use pip:
-    pip install bibtexparser
+```
+pip install bibtexparser
+```
 
+## Adjustments:
 Next, adjust the input file and the output file:
 
-    input_file = "library.bib"
-    output = "cleaned_library.bib"
+```python
+input_file = "library.bib"
+output = "cleaned_library.bib"
+```
     
 The function customization defines the unwanted sections. Just adjust the list with the elements you want to remove.
-    unwanted = ["pages","keywords", "doi", "url", "abstract", "file",...}
+```python
+unwanted = ["pages","keywords", "doi", "url", "abstract", "file",...]
+```
 
-
-Run the code et voila, the generated outputfile looks less messy now.   
+Run the code et voila, the generated outputfile looks less messy now.
