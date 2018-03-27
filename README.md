@@ -5,11 +5,8 @@ Bibtex files are ridiculously messy, and especially if you use self-generating b
 I'm using Latex to generate my articles/papers/documents and my knowledge in Latex is too limited to figure out how I properly adjust my bibliographystyle so that unwanted sections are not shown.
 Yes, I know, there are the 
 ```python
-"\AtEveryBibitem{\clearfield{xxx}}" 
-```
-and 
-```python
-"\AtEveryCitekey{\clearfield{yyy}}"
+\AtEveryBibitem{\clearfield{xxx}} 
+\AtEveryCitekey{\clearfield{yyy}}
 ```
 commands to clear the field conditionally for selected type and I tried, spend couple of hours figuring it out, it didn't do anything at all and got annoyed.
 
