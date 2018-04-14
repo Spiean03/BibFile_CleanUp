@@ -10,7 +10,7 @@ Yes, I know, there are the
 ```
 commands to clear the field conditionally for selected type and I tried, spend couple of hours figuring it out, it didn't do anything at all and got annoyed. So the brute-force solution is to just remove the unwanted entries from the .bib-file.
 
-So, why U not use Python instead? Here is a script that removes unwanted entries from your .bib file. No worries, a new file is created and the old one will remain unchanged.
+So, why U not use Python to remove unwanted entries from your bib-file? The presented python-script presented here does exactly this. No worries, a new bib-file is created and the old one will remain unchanged.
 
 ## Requires:
 First, this code runs on Python 2.7, so make sure you have it.
