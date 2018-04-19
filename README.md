@@ -26,6 +26,13 @@ Next, adjust the input file and the output file:
 input_file = "library.bib"
 output = "cleaned_library.bib"
 ```
+Also, for some reasons not every bibliographystyle keeps the capitalizations of letters. This is annoying. I especially want the uppercase letters kept in "title". If you want the letters to be capitalized, change
+
+```python
+captialization = True
+```
+if not, change it to False. The script will replace the letters (eg. "A", "B"...) with ({A},{B}). The brackets force the letters to be capitalized.
+
     
 The function customization defines the unwanted sections. Just adjust the list with the elements you want to remove.
 ```python
