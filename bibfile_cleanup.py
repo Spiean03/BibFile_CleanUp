@@ -27,9 +27,9 @@ def customizations(record):
             if i.isupper():
                 string = "{"+str(i)+"}"
                 i.replace(i,string)
-    '''
-    Change capitalization to False if you want to force the upper letters in "title" to be capitalized
-    '''
+    
+    
+    #Change capitalization to False if you do not want to force the upper letters in "title" to be capitalized
     capitalization = True
     if capitalization == True:
         i = 0
