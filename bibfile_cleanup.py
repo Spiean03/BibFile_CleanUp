@@ -3,6 +3,7 @@ import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.customization import *
+import re
 
 input_file = "library.bib"
 output_file = "libraryclean.bib"
@@ -13,17 +14,32 @@ print("{0} Cleaning duff bib records from {1} into {2}".format(now, input_file, 
 # Let's define a function to customize our entries.
 # It takes a record and return this record.
 def customizations(record):
-    """Use some functions delivered by the library
-    :param record: a record
-    :returns: -- customized record
-    """
     record = type(record)
     record = page_double_hyphen(record)
     record = convert_to_unicode(record)
     ## delete the following keys.
-    unwanted = ["pages","keywords", "doi", "url", "abstract", "file", "gobbledegook", "isbn", "link", "keyword", "mendeley-tags", "annote", "pmid", "chapter", "institution", "issn", "month"]
+    unwanted = ["keywords", "doi", "url", "abstract", "file", "gobbledegook", "isbn", "link", "keyword", "mendeley-tags", "annote", "pmid", "chapter", "institution", "issn", "month"]
+    
     for val in unwanted:
         record.pop(val, None)
+    for element in record['title']:
+        for i in element:
+            if i.isupper():
+                string = "{"+str(i)+"}"
+                i.replace(i,string)
+    '''
+    Change capitalization to False if you want to force the upper letters in "title" to be capitalized
+    '''
+    capitalization = True
+    if capitalization == True:
+        i = 0
+        for element in record['title']:
+            if element.isupper() == True:
+                print element
+                string = "{"+ str(element)+"}"
+                record["title"] = record["title"].replace(element,string)
+                print string
+                print record['title']
     return record
 
 
@@ -45,19 +61,13 @@ else :
     sys.exit(errs)
 
 bibtex_str = None
+
 if bib_database:
     writer = BibTexWriter()
     writer.order_entries_by = ('author', 'year', 'type')
-    bibtex_str = bibtexparser.dumps(bib_database, writer)
-    #print(str(bibtex_str))
-    
+    bibtex_str = bibtexparser.dumps(bib_database, writer)    
     with open(output_file, "w") as f:
-        #print bibtex_str
         f.write(bibtex_str.encode('utf-8'))
-        #file = text_file
-        #text_file.write(bibtex_str)
-        #print(bibtex_str, file)
-        
 
 if bibtex_str:
     now = datetime.datetime.now()
