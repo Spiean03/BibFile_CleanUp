@@ -31,7 +31,7 @@ Also, for some reasons not every bibliographystyle keeps the capitalizations of 
 ```python
 captialization = True
 ```
-if not, change it to False. The script will replace the letters (eg. "A", "B"...) with ({A},{B}). The brackets force the letters to be capitalized.
+if not, change it to False. The script will replace the letters (eg. "A", "B"...) with ({A}, {B}...). The brackets force the letters to be capitalized.
 
     
 The function customization defines the unwanted sections. Just adjust the list with the elements you want to remove.
