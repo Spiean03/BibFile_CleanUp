@@ -7,13 +7,14 @@ import re
 
 input_file = "library.bib"
 output_file = "libraryclean.bib"
+capitalization = True
 
 now = datetime.datetime.now()
 print("{0} Cleaning duff bib records from {1} into {2}".format(now, input_file, output_file))
 
 # Let's define a function to customize our entries.
 # It takes a record and return this record.
-def customizations(record):
+def customizations(record, capitalization=capitalization):
     record = type(record)
     record = page_double_hyphen(record)
     record = convert_to_unicode(record)
@@ -27,10 +28,7 @@ def customizations(record):
             if i.isupper():
                 string = "{"+str(i)+"}"
                 i.replace(i,string)
-    
-    
-    #Change capitalization to False if you do not want to force the upper letters in "title" to be capitalized
-    capitalization = True
+                
     if capitalization == True:
         i = 0
         for element in record['title']:
