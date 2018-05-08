@@ -19,7 +19,7 @@ def customizations(record, capitalization=capitalization):
     record = page_double_hyphen(record)
     record = convert_to_unicode(record)
     ## delete the following keys.
-    unwanted = ["keywords", "doi", "url", "abstract", "file", "gobbledegook", "isbn", "link", "keyword", "mendeley-tags", "annote", "pmid", "chapter", "institution", "issn", "month"]
+    unwanted = ["keywords", "doi", "url", "abstract", "file", "isbn", "link", "keyword", "mendeley-tags", "annote", "pmid", "chapter", "institution", "issn", "month"]
     
     for val in unwanted:
         record.pop(val, None)
