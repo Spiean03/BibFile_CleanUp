@@ -1,3 +1,5 @@
+
+
 import datetime
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
@@ -29,15 +31,15 @@ def customizations(record, capitalization=capitalization):
                 string = "{"+str(i)+"}"
                 i.replace(i,string)
                 
-    if capitalization == True:
-        i = 0
-        for element in record['title']:
-            if element.isupper() == True:
-                print element
-                string = "{"+ str(element)+"}"
-                record["title"] = record["title"].replace(element,string)
-                print string
-                print record['title']
+    #if capitalization == True:
+        #i = 0
+        #for element in record['title']:
+            #if element.isupper() == True:
+                #print element
+                #string = "{"+ str(element)+"}"
+                #record["title"] = record["title"].replace(element,string)
+                #print string
+                #print record['title']
     return record
 
 
