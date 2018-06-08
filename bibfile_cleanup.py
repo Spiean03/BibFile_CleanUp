@@ -1,4 +1,12 @@
-
+"""
+Created on Fri May 18 16:10:01 2018
+@author:    Andreas Spielhofer
+            Ph.D. Candidate
+            Physics Departement
+            McGill University
+            Montreal, Canada
+@contact:   andreas.spielhofer@mail.mcgill.ca
+"""
 
 import datetime
 import bibtexparser
