@@ -15,9 +15,13 @@ from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.customization import *
 import re
 
+'''
+Adjust input_file, output_file and capitalization to your needs:
+'''
 input_file = "library.bib"
 output_file = "libraryclean.bib"
 capitalization = True
+
 
 now = datetime.datetime.now()
 print("{0} Cleaning duff bib records from {1} into {2}".format(now, input_file, output_file))
