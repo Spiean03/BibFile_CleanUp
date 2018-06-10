@@ -33,11 +33,13 @@ def customizations(record, capitalization=capitalization):
     
     for val in unwanted:
         record.pop(val, None)
-    for element in record['title']:
-        for i in element:
-            if i.isupper():
-                string = "{"+str(i)+"}"
-                i.replace(i,string)
+
+    if capitalization == True:
+        for element in record['title']:
+            for i in element:
+                if i.isupper():
+                    string = "{"+str(i)+"}"
+                    i.replace(i,string)
        
     return record
 
